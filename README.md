@@ -11,23 +11,24 @@ The code is released under the [MIT license](LICENSE).
 
 Run `th test.lua` to test all the modules in the ggnn and rnn libraries.
 
-### Reproduce the experiment results
+### Reproducing the experiment results
 
 To run the bAbI experiments, and experiments on the two extra sequence tasks:
-1. go into `babi/data`, run `bash get_10_fold_data.sh` to get 10 folds of bAbI
+
+1. Go into `babi/data`, run `bash get_10_fold_data.sh` to get 10 folds of bAbI
    data for 5 tasks (4, 15, 16, 18, 19) and do some preprocessing.
-2. go into `babi/data/extra_seq_tasks`, run `bash generate_10_fold_data.sh` to
+2. Go into `babi/data/extra_seq_tasks`, run `bash generate_10_fold_data.sh` to
    get 10 folds of data for the two extra sequence tasks.
-3. go back to `babi/` and use `run_experiments.py` to run the GGNN/GGS-NN
+3. Go back to `babi/` and use `run_experiments.py` to run the GGNN/GGS-NN
    experiments, e.g. `python run_experiments.py babi18` runs GGNN on bAbI task
    18 for all 10 folds of data.
-4. use `run_rnn_baselines.py` to run RNN/LSTM baseline experiments, e.g.
+4. Use `run_rnn_baselines.py` to run RNN/LSTM baseline experiments, e.g.
    `python run_rnn_baselines.py babi18 lstm` runs LSTM on bAbI task 18 for all
    10 folds of data.
 
 ### Notes
-* make sure `"./?.lua"` and `"./?/init.lua"` are on your lua path. For example by 
+* Make sure `"./?.lua"` and `"./?/init.lua"` are on your lua path. For example by 
   `export LUA_PATH="./?.lua;./?/init.lua;$LUA_PATH"`.
-* the experiment results may differ from what we reported in the paper, as the
-  dataset is randomly generated and will be different from run to run.
+* The experiment results may differ slightly from what we reported in the paper, as the
+  datasets are randomly generated and will be different from run to run.
 
