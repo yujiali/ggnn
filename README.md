@@ -1,6 +1,6 @@
 # Gated Graph Sequence Neural Networks
 This is the code for our ICLR'16 paper:
-* Yujia Li, Danial Tarlow, Marc Brockschmidt, Richard Zemel. [*Gated Graph Sequence Neural Networks*](http://arxiv.org/abs/1511.05493).
+* Yujia Li, Daniel Tarlow, Marc Brockschmidt, Richard Zemel. [*Gated Graph Sequence Neural Networks*](http://arxiv.org/abs/1511.05493).
 International Conference on Learning Representations, 2016.
 
 Please cite the above paper if you use our code.
