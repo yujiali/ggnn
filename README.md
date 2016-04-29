@@ -11,7 +11,7 @@ The code is released under the [MIT license](LICENSE).
 
 Run `th test.lua` to test all the modules in the ggnn and rnn libraries.
 
-### Reproducing the experiment results
+### Reproducing the bAbI tasks and graph algorithms experiment results
 
 To run the bAbI experiments, and experiments on the two extra sequence tasks:
 
