@@ -10,7 +10,8 @@ mv lua/babi .
 
 cd ..
 
-for fold in {1..10}; do
+for fold in 1 2 3 4 5 6 7 8 9 10
+do
     echo ================ Generating fold $fold =====================
     echo 
 
@@ -26,7 +27,8 @@ for fold in {1..10}; do
     echo
 
     # for i in `seq 1 20`; do
-    for i in {4,15,16,18,19}; do
+    for i in 4 15 16 18 19
+    do
         ./babi-tasks $i 1000 --symbolic true > symbolic_$fold/train/${i}.txt
         ./babi-tasks $i 1000 --symbolic true > symbolic_$fold/test/${i}.txt
     done
@@ -38,7 +40,8 @@ for fold in {1..10}; do
     # back down
     cd ..
 
-    for i in {4,15,16,18,19}; do
+    for i in 4 15 16 18 19
+    do
         python symbolic_preprocess.py $i bAbI-tasks/symbolic_$fold processed_$fold
     done
 
@@ -48,7 +51,8 @@ for fold in {1..10}; do
     mkdir processed_$fold/rnn/train
     mkdir processed_$fold/rnn/test
 
-    for i in {4,15,16,18,19}; do
+    for i in 4 15 16 18 19
+    do
         python rnn_preprocess.py processed_$fold/train/${i}_graphs.txt processed_$fold/rnn/train/${i}_tokens.txt --mode graph --nval 50
         python rnn_preprocess.py processed_$fold/rnn/train/${i}_tokens.txt processed_$fold/rnn/train/${i}_rnn.txt --mode rnn
         python rnn_preprocess.py processed_$fold/rnn/train/${i}_tokens.txt.val processed_$fold/rnn/train/${i}_rnn.txt.val --mode rnn --dict processed_$fold/rnn/train/${i}_rnn.txt.dict
